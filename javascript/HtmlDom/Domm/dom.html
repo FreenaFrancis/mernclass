@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <div id="myElement">This is a sample element with ID.</div>
+    <img id="myImage" src="old_image.jpg" alt="Old Image">
+    <p class="myClass">This is a paragraph with a class.</p>
+    <div id="parentElement">This is the parent element.</div>
+
+    <script>
+        // Finding HTML Elements
+        var elementById = document.getElementById("myElement");
+        var elementsByTagName = document.getElementsByTagName("div");
+        var elementsByClass = document.getElementsByClassName("myClass");
+
+        // Changing HTML Elements
+        elementById.innerHTML = "New content";
+        document.getElementById("myImage").src = "new_image.jpg";
+        elementById.style.color = "red";
+        elementById.setAttribute("data-custom", "new value");
+
+        // Adding and Deleting Elements
+        var newDiv = document.createElement("div");
+        newDiv.innerHTML = "This is a new div element.";
+        document.body.appendChild(newDiv);
+
+        var parentElement = document.getElementById("parentElement");
+        var newChild = document.createElement("p");
+        newChild.innerHTML = "This is a new child element.";
+        parentElement.appendChild(newChild);
+
+        var oldElement = document.getElementById("myImage");
+        var newImage = document.createElement("img");
+        newImage.src = "new_image.jpg";
+        parentElement.replaceChild(newImage, oldElement);
+
+        document.write("This is dynamically generated content.");
+
+        // Removing an HTML element
+        var elementToRemove = document.getElementById("myElement");
+        elementToRemove.parentNode.removeChild(elementToRemove);
+    </script>
+</body>
+</html>

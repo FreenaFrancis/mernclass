@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Event Handlers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body onload="showWelcome()">
+    <h2>Combined Event Handlers</h2>
+
+    <button id="myButton" onclick="changeText()">Click Me</button>
+
+    <select id="mySelect" onchange="showMessage()">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+
+    <img id="myImage" src="image1.jpg" onmouseover="changeImage()" onmouseout="restoreImage()" alt="Hover Me">
+
+    <script>
+        function showWelcome() {
+            alert("Welcome to our website!");
+        }
+
+        function changeText() {
+            const button = document.getElementById('myButton');
+            button.innerText = "Clicked!";
+        }
+
+        function showMessage() {
+            const select = document.getElementById('mySelect');
+            const selectedValue = select.value;
+            alert(`You selected: ${selectedValue}`);
+        }
+
+        function changeImage() {
+            const image = document.getElementById('myImage');
+            image.src = "image2.jpg";
+        }
+
+        function restoreImage() {
+            const image = document.getElementById('myImage');
+            image.src = "image1.jpg";
+        }
+    </script>
+</body>
+</html>

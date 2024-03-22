@@ -1,0 +1,20 @@
+p{
+    color: rgba(173, 130, 130, 0.795);
+    /* background-color: #000000; */
+    background-color: hsl(240, 8%, 6%);
+}
+/* a:link{
+color:brown
+}
+
+a:hover{
+    color:cadetblue
+}
+
+a:visted{
+    color:blueviolet
+}
+
+a:active{
+    color: red;
+} */

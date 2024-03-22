@@ -1,0 +1,8 @@
+*{
+    background-color: rgb(179, 152, 152);
+}
+li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}

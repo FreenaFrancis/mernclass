@@ -1,0 +1,90 @@
+
+
+1. **Create a table in SQL:**
+   
+   ```sql
+   CREATE TABLE Customer (
+       Customer_id INT PRIMARY KEY,
+       Customer_name VARCHAR(255),
+       Customer_Address VARCHAR(255),
+       City VARCHAR(50),
+       State VARCHAR(50)
+   );
+   ```
+
+2. **Insert records into the table:**
+
+   ```sql
+   INSERT INTO Customer (Customer_id, Customer_name, Customer_Address, City, State)
+   VALUES (1, 'hgh', 'fgjh', 'gf', 'NT');
+   ```
+
+3. **Change `Customer_Address` to `Address`:**
+
+   ```sql
+   ALTER TABLE Customer
+   CHANGE COLUMN Customer_Address Address VARCHAR(255);
+   ```
+
+4. **Add a new column `mobile_number`:**
+
+   ```sql
+   ALTER TABLE Customer
+   ADD COLUMN mobile_number VARCHAR(15);
+   ```
+
+5. **Delete a column where `mobile_number` is null:**
+
+   ```sql
+   ALTER TABLE Customer
+   DROP COLUMN IF EXISTS mobile_number;
+   ```
+
+6. **Show all records:**
+
+   ```sql
+   SELECT * FROM Customer;
+   ```
+
+7. **Update phone number for Mary Smith to 985758575:**
+
+   ```sql
+   UPDATE Customer
+   SET mobile_number = '985758575'
+   WHERE Customer_name = 'Mary';
+   ```
+
+8. **Delete a record where name is Mary:**
+
+   ```sql
+   DELETE FROM Customer
+   WHERE Customer_name = 'Mary';
+   ```
+
+9. **Select distinct data where the user is from state = 'NT':**
+
+   ```sql
+   SELECT DISTINCT * FROM Customer
+   WHERE State = 'NT';
+   ```
+
+10. **Print `Customer_ID` greater than 5:**
+
+    ```sql
+    SELECT Customer_id FROM Customer
+    WHERE Customer_id > 5;
+    ```
+
+11. **Delete a mobile number column:**
+
+    ```sql
+    ALTER TABLE Customer
+    DROP COLUMN IF EXISTS mobile_number;
+    ```
+
+12. **Truncate a table:**
+
+    ```sql
+    TRUNCATE TABLE Customer;
+    ```
+

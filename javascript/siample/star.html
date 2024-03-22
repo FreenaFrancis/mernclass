@@ -1,0 +1,66 @@
+
+
+<!-- // var rows = 2;
+// var cols = 2 ;
+// for (i=2; i<=2; i++){
+//     for(i=1; i<=2; i++){
+//         document.write('*');
+//     }
+//     console.log("*")
+// } -->
+
+<!DOCTYPE html>
+<html> 
+  <head>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+
+    <script>
+      // Get the canvas element
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Set the square dimensions
+      const squareSize = 150;
+      const squareX = (canvas.width - squareSize) / 2;
+      const squareY = (canvas.height - squareSize) / 2;
+
+      // Set the star properties
+      const starRadius = squareSize / 2;
+      const starPoints = 5;
+      const starInnerRadius = starRadius / 2;
+      const rotationAngle = Math.PI / 2; // Rotate by 90 degrees (in radians)
+
+      // Calculate the coordinates of the star points
+      const coordinates = [];
+      for (let i = 0; i < starPoints * 2; i++) {
+        const angle = i * Math.PI / starPoints - rotationAngle;
+        const radius = i % 2 === 0 ? starRadius : starInnerRadius;
+        const x = squareX + squareSize / 2 + radius * Math.cos(angle);
+        const y = squareY + squareSize / 2 + radius * Math.sin(angle);
+        coordinates.push({ x, y });
+      }
+
+      // Draw the star
+      ctx.beginPath();
+      ctx.moveTo(coordinates[0].x, coordinates[0].y);
+      for (let i = 1; i < coordinates.length; i++) {
+        ctx.lineTo(coordinates[i].x, coordinates[i].y);
+      }
+      ctx.closePath();
+      ctx.fillStyle = 'gold';
+      ctx.fill();
+
+      // Draw the square border
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = 'black';
+      ctx.strokeRect(squareX, squareY, squareSize, squareSize);
+    </script>
+  </body>
+</html>

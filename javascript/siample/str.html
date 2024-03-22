@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+      
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      
+      const gridSize = 5;
+      const squareSize = canvas.width / gridSize;
+
+      
+      const starRadius = squareSize / 2;
+      const starPoints = 5;
+      const starInnerRadius = starRadius / 2;
+      const rotationAngle = Math.PI / 2; 
+
+      for (let row = 0; row < gridSize; row++) {
+        for (let col = 0; col < gridSize; col++) {
+          
+          const coordinates = [];
+          for (let i = 0; i < starPoints * 2; i++) {
+            const angle = i * Math.PI / starPoints - rotationAngle;
+            const radius = i % 2 === 0 ? starRadius : starInnerRadius;
+            const x = col * squareSize + squareSize / 2 + radius * Math.cos(angle);
+            const y = row * squareSize + squareSize / 2 + radius * Math.sin(angle);
+            coordinates.push({ x, y });
+          }
+
+          
+          ctx.beginPath();
+          ctx.moveTo(coordinates[0].x, coordinates[0].y);
+          for (let i = 1; i < coordinates.length; i++) {
+            ctx.lineTo(coordinates[i].x, coordinates[i].y);
+          }
+          ctx.closePath();
+          ctx.fillStyle = 'blue';
+          ctx.fill();
+
+          
+        }
+      }
+    </script>
+  </body>
+</html>

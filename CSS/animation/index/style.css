@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    background-color: rgb(4, 224, 188);
+
+}
+div{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin: 5px;
+    /* animation: expand .1s ease-out 1s infinite ;  */
+    /*animation , animation nte name , pinea athinte transition time , timing function kodukum ie, easein , ease-out or linear, next delay ie 1s, then  */
+animation-name: expand;
+animation-duration: 1s;
+animation-timing-function: ease-out;
+animation-delay: 1s;
+animation-iteration-count: infinite;
+}
+/* inni nammal expand and string koduthu animation chaiyanam
+then ippo ulla div nai 200px il ninnu 500px laku akanam then pinea athina theerichu 200px laku akanam
+*/
+
+div:hover{
+    animation-play-state: paused;
+}
+
+/* @keyframes expand{
+    from{
+        width:200px;
+    }
+    to{
+        width:500px;
+    }
+} */
+
+@keyframes expand{
+0%{
+        width:200px;
+        height: 300px;
+        background-color: orange;
+    }
+    50%{
+        width:500px;
+        height: 800px;
+        background-color: pink;
+    }
+    100%{
+        width: 100px;
+        height: 300px;
+    }
+}
+/* ippo namal save chaithu run chaiyal run avilla because animation nammal oru div um append chaithittilla
+so nammal athu div anno animation chaiyadathu avidea animation properrty access chaiyum
+*/

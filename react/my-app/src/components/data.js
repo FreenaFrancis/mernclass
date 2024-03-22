@@ -1,0 +1,30 @@
+export const userList = [
+    {
+        firstname:"freena",
+        lastname:"francis",
+        number:1234444,
+        email:"free@gmail.com",
+        company:"softroniics",
+        description:"asdfghjkl",
+        bio:"sdfghjk"
+    },
+    {
+        firstname:"freena",
+        lastname:"francis",
+        number:1234444,
+        email:"free@gmail.com",
+        company:"softroniics",
+        description:"asdfghjkl",
+        bio:"sdfghjk"
+    },
+    {
+        firstname:"freena",
+        lastname:"francis",
+        number:1234444,
+        email:"free@gmail.com",
+        company:"softroniics",
+        description:"asdfghjkl",
+        bio:"sdfghjk"
+    },
+
+]
